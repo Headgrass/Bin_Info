@@ -1,32 +1,26 @@
-package ru.headgrass.bininfo
+package ru.headgrass.bininfo.model
 
-import com.google.gson.annotations.SerializedName
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-data class BinInfoDTO(
-    @SerializedName("scheme")
+@Parcelize
+data class BinInfo(
     val network: String = "NONE",
-    @SerializedName("type")
     val type: String = "NONE",
-    @SerializedName("brand")
     val brand: String = "NONE",
-    @SerializedName("prepaid")
     val prepaid: String = "NONE",
-    val country: CountryDTO?,
-    val bankDTO: BankDTO?
-)
-
-data class BankDTO(
-    @SerializedName("name")
+    val country: String = "NONE",
+    val currency: String = "NONE",
     val bank: String = "NONE",
     val phone: String = "NONE",
     val city: String = "NONE",
-    @SerializedName("url")
     val site: String = "NONE"
-)
+) : Parcelable
 
-data class CountryDTO(
-    val numeric: String = "NONE",
-    @SerializedName("name")
-    val country: String = "NONE",
-    val currency: String = "NONE"
-)
+fun getBinInfoNow(): BinInfo {
+    return BinInfo(
+        "Visa", "debit", "New World Immediate Debit", "false",
+        "Russian Federation", "RUB", "Alfa-Bank", "+7 495 78-888-78",
+        "Moscow", "www.alfabank.ru"
+    )
+}

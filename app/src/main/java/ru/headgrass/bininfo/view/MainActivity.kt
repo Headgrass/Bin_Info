@@ -1,13 +1,12 @@
 package ru.headgrass.bininfo.view
 
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import org.json.JSONException
-import org.json.JSONObject
+import com.google.gson.Gson
 import ru.headgrass.bininfo.R
 import ru.headgrass.bininfo.databinding.ActivityMainBinding
+import ru.headgrass.bininfo.model.BinInfoDTO
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.lang.Exception
@@ -25,56 +24,40 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnSearch.setOnClickListener {
-        val bin = binding.et8bin.toString()
+        binding.btnSearch.setOnClickListener { binInfo ->
+            val bin = binding.et8bin.text
+            Executors.newSingleThreadExecutor().submit {
+                var urlConnection: HttpsURLConnection? = null
 
-        Executors.newSingleThreadExecutor().submit {
-            var urlConnection: HttpsURLConnection? = null
+                try {
+                    val uri = URL("https://lookup.binlist.net/$bin")
+                    urlConnection = uri.openConnection() as HttpsURLConnection
+                    urlConnection.requestMethod = "GET"
+                    urlConnection.readTimeout = 1000
+                    urlConnection.connectTimeout = 1000
 
-            try {
-                val uri = URL("https://lookup.binlist.net/47900430")
-                urlConnection = uri.openConnection() as HttpsURLConnection
-                urlConnection.requestMethod = "GET"
-                urlConnection.readTimeout = 1000
-                urlConnection.connectTimeout = 1000
+                    val reader = BufferedReader(InputStreamReader(urlConnection.inputStream))
+                    val result = reader.lines().collect(Collectors.joining("\n"))
+                    Log.d("DEBUGLOG", "result: $result")
 
-                val reader = BufferedReader(InputStreamReader(urlConnection.inputStream))
-                val result = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    reader.lines().collect(Collectors.joining("\n"))
-                } else {
-                    ""
-                }
 
-                Log.d("DEBUGLOG", "result: $result")
-
-                runOnUiThread {
-                    println(result)
+                    val binInfoDTO = Gson().fromJson(result, BinInfoDTO::class.java)
+                    val bundle = Bundle()
+//                    bundle.putParcelable("BIN_EXTRA", binInfoDTO)
                     settingData()
+                } catch (e: Exception) {
+                    Log.e("DEBUGLOG", "FAIL CONNECTION", e)
+                } finally {
+                    urlConnection?.disconnect()
                 }
-            } catch (e: Exception) {
-                Log.e("DEBUGLOG", "FAIL CONNECTION", e)
-            } finally {
-                urlConnection?.disconnect()
             }
         }
-    }}
+    }
 
     private fun settingData() {
         supportFragmentManager.beginTransaction().replace(
             R.id.main_container,
             InfoAboutCard.newInstance(bundle = Bundle())
-        )
-            .commit()
+        ).commit()
     }
-
-    fun parse(json: String): JSONObject? {
-        var jsonObject: JSONObject? = null
-        try {
-            jsonObject = JSONObject(json)
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
-        return jsonObject
-    }
-
 }
