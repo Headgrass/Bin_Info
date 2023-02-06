@@ -4,128 +4,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="32dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="150dp"
     android:orientation="vertical"
-    android:layout_marginTop="200dp"
     tools:context=".view.InfoAboutCard">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Network"
+        android:text="@string/network"
         app:autoSizeMinTextSize="16dp" />
 
     <TextView
         android:id="@+id/bin_info_network"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NONE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Type" />
+        android:text="@string/type" />
 
     <TextView
         android:id="@+id/bin_info_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NONE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Brand" />
+        android:text="@string/brand" />
 
     <TextView
         android:id="@+id/bin_info_brand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NONE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Prepaid" />
+        android:text="@string/prepaid" />
 
     <TextView
         android:id="@+id/bin_info_prepaid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NONE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Country" />
+        android:text="@string/country" />
 
     <TextView
         android:id="@+id/bin_info_country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NONE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Currency" />
+        android:text="@string/currency" />
 
     <TextView
         android:id="@+id/bin_info_currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NONE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Bank" />
+        android:text="@string/bank" />
 
     <TextView
         android:id="@+id/bin_info_bank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NONE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Phone" />
+        android:text="@string/phone" />
 
     <TextView
         android:id="@+id/bin_info_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NONE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Site" />
+        android:text="@string/site" />
 
     <TextView
         android:id="@+id/bin_info_site"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NONE"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 
 </LinearLayout>

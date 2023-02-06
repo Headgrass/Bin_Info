@@ -43,8 +43,13 @@ class MainActivity : AppCompatActivity() {
 
                     val binInfoDTO = Gson().fromJson(result, BinInfoDTO::class.java)
                     val bundle = Bundle()
-//                    bundle.putParcelable("BIN_EXTRA", binInfoDTO)
-                    settingData()
+                    bundle.putParcelable("BIN_EXTRA", binInfoDTO)
+
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_container, InfoAboutCard.newInstance(bundle))
+                        .commit()
+
+
                 } catch (e: Exception) {
                     Log.e("DEBUGLOG", "FAIL CONNECTION", e)
                 } finally {
@@ -52,12 +57,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    private fun settingData() {
-        supportFragmentManager.beginTransaction().replace(
-            R.id.main_container,
-            InfoAboutCard.newInstance(bundle = Bundle())
-        ).commit()
     }
 }

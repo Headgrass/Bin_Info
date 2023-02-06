@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Информация о карте по BIN"
-        android:textSize="24dp"
+        android:text="@string/tv_infoBIN"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,11 +20,11 @@
 
     <EditText
         android:id="@+id/et_8bin"
+        style="@style/Widget.AppCompat.EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Введите 8 цифр карты"
+        android:hint="@string/et_enterBIN"
         android:inputType="number"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Поиск"
+        android:text="@string/search"
         app:layout_constraintStart_toEndOf="@+id/et_8bin"
         app:layout_constraintTop_toTopOf="@+id/et_8bin" />
 
