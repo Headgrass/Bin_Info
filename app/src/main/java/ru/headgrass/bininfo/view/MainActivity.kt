@@ -24,8 +24,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnSearch.setOnClickListener { binInfo ->
+        binding.btnSearch.setOnClickListener {
             val bin = binding.et8bin.text
+
             Executors.newSingleThreadExecutor().submit {
                 var urlConnection: HttpsURLConnection? = null
 

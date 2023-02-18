@@ -36,7 +36,7 @@ class InfoAboutCard : Fragment() {
         val info = arguments?.getParcelable<BinInfoDTO>("BIN_EXTRA")
         binding.binInfoNetwork.text = info?.network
         binding.binInfoType.text = info?.type
-        binding.binInfoBrand.text = info?.brand ?: ""
+        binding.binInfoBrand.text = info?.brand
 
         if (info?.prepaid == "false") {
             binding.binInfoPrepaid.text = "NO"

@@ -14,4 +14,6 @@
     <string name="tv_infoBIN">Информация о карте по BIN</string>
     <string name="et_enterBIN">Введите 8 цифр карты</string>
     <string name="search">Поиск</string>
+    <string name="history_search">история поиска</string>
+    <string name="_47901234">47901234</string>
 </resources>

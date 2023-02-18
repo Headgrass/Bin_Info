@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginStart="32dp"
-    android:layout_marginTop="150dp"
+    android:layout_marginTop="180dp"
     android:orientation="vertical"
     tools:context=".view.InfoAboutCard">
 
@@ -110,6 +110,7 @@
         android:id="@+id/bin_info_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoLink="phone"
         android:text="@string/none"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -123,6 +124,7 @@
         android:id="@+id/bin_info_site"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoLink="web"
         android:text="@string/none"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
